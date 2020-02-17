@@ -4,7 +4,7 @@
 
 觉得还不错请双击 666 :) 
 
-有问题请随时 [新开 issue](https://github.com/roy-tian/mdn-examples/issues/new) 或 [发邮件](mailto:tdjol@hotmail.com) :)
+有问题请随时 [新开 issue](https://github.com/shc0743/mdn-demo-chn/issues/new) 或 [发邮件](mailto:18907436033@163.com) :)
 
 <table style="margin:0 auto">
 <tr style="text-align:left">
