@@ -1,12 +1,12 @@
 const ongoingTouches = [];
 const el = document.getElementById("canvas");
-const ctx = el.getContext("2d");
+const ctx = el.getContext("2d")
 
 startup();
 
 function startup() {
-  el.width = 600;
-  el.height = 600;
+  el.width = screen.width;
+  el.height = screen.height;
   el.addEventListener("touchstart", handleStart, false);
   el.addEventListener("touchend", handleEnd, false);
   el.addEventListener("touchcancel", handleCancel, false);
