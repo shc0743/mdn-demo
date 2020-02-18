@@ -160,8 +160,8 @@ const balls = [];
 const evilBall = new EvilCircle(
   random(0, width),
   random(0, height),
-  true
-);
+  false
+); 
 let count = 0;
 
 // 执行动画
