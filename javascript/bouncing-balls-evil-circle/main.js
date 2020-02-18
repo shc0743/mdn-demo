@@ -1,4 +1,4 @@
-const BALLS_COUNT = 25;
+const BALLS_COUNT = 80;
 const BALL_SIZE_MIN = 10;
 const BALL_SIZE_MAX = 20;
 const BALL_SPEED_MAX = 7;
@@ -36,6 +36,10 @@ class Ball extends Shape {
     ctx.fillStyle = this.color;
     ctx.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
     ctx.fill();
+  }
+
+  onclick() {
+    this=undefined
   }
 
   update() {
