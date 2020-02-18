@@ -152,7 +152,7 @@ class EvilCircle extends Shape {
         if (distance < this.size + balls[j].size) {
           balls[j].exists = false;
           count--;
-          para.innerHTML = '还剩 ' + count + ' 个球'+'<br>不等了,现在就清除<input type=number onblur=\'clearballs(this.value)\'>个球'
+          para.textContent = '还剩 ' + count + ' 个球'+'<br>不等了,现在就清除<input type=number onblur=\'clearballs(this.value)\'>个球'
         }
       }
     }
@@ -214,7 +214,7 @@ function loop() {
       balls[i].onclick=function(){
   this.exists=false
   count=count-num;
-  para.innerHTML = '还剩 ' + count + ' 个球'+'<br>不等了,现在就清除<input type=number onblur=\'clearballs(this.value)\'>个球';
+  para.textContent = '还剩 ' + count + ' 个球'+'<br>不等了,现在就清除<input type=number onblur=\'clearballs(this.value)\'>个球';
       }
     }
   }
@@ -230,6 +230,6 @@ function clearballs(num){
 for(var i=0;i<num;i++){
   balls[i].exists=false
   count=count-num;
-  para.innerHTML = '还剩 ' + count + ' 个球'+'<br>不等了,现在就清除<input type=number onblur=\'clearballs(this.value)\'>个球';
+  para.textContent = '还剩 ' + count + ' 个球'+'<br>不等了,现在就清除<input type=number onblur=\'clearballs(this.value)\'>个球';
  }
 }
