@@ -5,8 +5,8 @@ const ctx = el.getContext("2d")
 startup();
 
 function startup() {
-  el.width = screen.width;
-  el.height = screen.height;
+  el.width = screen.width-20;
+  el.height = screen.height-20;
   el.addEventListener("touchstart", handleStart, false);
   el.addEventListener("touchend", handleEnd, false);
   el.addEventListener("touchcancel", handleCancel, false);
