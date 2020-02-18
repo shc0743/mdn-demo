@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<div><h1>作弊神器</h1>
+第<span id="csu"></span>次<br>
+请输入<span id="otp"></span>,然后告诉我们大了还是小了<br>
+<button id=bigl>大了</button><button id=smalll>小了</button>
+</div>
+<script>
+addEventListener("load",function(){
+csu.innerHTML=1
+otp.innerHTML=50
+window.ssc=Number(otp.innerHTML)
+})
+bigl.onclick=function(){
+if(csu.innerHTML=="1"){var xc=ssc-0;sc=0} else {var xc=ssc-sc ;sc=sc-25}
+var tot=Math.floor(xc/2)+sc
+window.ssc=Number(otp.innerHTML)
+otp.innerHTML=tot
+window.sc=Number(otp.innerHTML)
+csu.innerHTML++;
+}
+smalll.onclick=function(){
+if(csu.innerHTML=="1"){var xc=100-ssc;sc=50} else {var xc=ssc-sc}
+var tot=Math.round(xc/2)+sc
+window.ssc=Number(otp.innerHTML)
+otp.innerHTML=tot
+window.sc=Number(otp.innerHTML)+50
+csu.innerHTML++;
+}
+</script>
