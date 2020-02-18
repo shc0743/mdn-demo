@@ -1,4 +1,4 @@
-const BALLS_COUNT = 80;
+const BALLS_COUNT = 200;
 const BALL_SIZE_MIN = 10;
 const BALL_SIZE_MAX = 20;
 const BALL_SPEED_MAX = 7;
@@ -211,6 +211,7 @@ function loop() {
       balls[i].draw();
       balls[i].update();
       balls[i].collisionDetect();
+      balls[i].onclick=function(){this=undefined}
     }
   }
 
