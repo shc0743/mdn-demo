@@ -152,7 +152,8 @@ class EvilCircle extends Shape {
         if (distance < this.size + balls[j].size) {
           balls[j].exists = false;
           count--;
-          para.textContent = '还剩 ' + count + ' 个球'+'<br>不等了,现在就清除<input type=number max=100 style=\'border:0;background-color:#000000\' onblur=\'clearballs(this.value)\'>个球<br>或..<button onclick=\'clearballs(1)\'>清除1个</button><button onclick=\'clearballs(5)\'>清除5个</button><button onclick=\'clearballs(10)\'>清除10个</button>';
+          //**para.textContent = '还剩 ' + count + ' 个球'+'<br>不等了,现在就清除<input type=number max=100 style=\'border:0;background-color:#000000\' onblur=\'clearballs(this.value)\'>个球<br>或..<button onclick=\'clearballs(1)\'>清除1个</button><button onclick=\'clearballs(5)\'>清除5个</button><button onclick=\'clearballs(10)\'>清除10个</button>';
+          /**/para.textContent = '还剩 ' + count + ' 个球'+'<br>不等了,现在就清除<input type=number max=100 style=\'border:0;background-color:#000000\' onblur=\'clearballs(this.value)\'>个';
         }
       }
     }
@@ -203,7 +204,7 @@ function loop() {
     );
     balls.push(ball);
     count++;
-    para.textContent = '还剩 ' + count + ' 个球'+'<br>不等了,现在就清除<input type=number max=100 style=\'border:0;background-color:#000000\' onblur=\'clearballs(this.value)\'>个球<br>或..<button onclick=\'clearballs(1)\'>清除1个</button><button onclick=\'clearballs(5)\'>清除5个</button><button onclick=\'clearballs(10)\'>清除10个</button>';
+    para.textContent = '还剩 ' + count + ' 个球'+'<br>不等了,现在就清除<input type=number max=100 style=\'border:0;background-color:#000000\' onblur=\'clearballs(this.value)\'>个';
   }
 
   for (let i = 0; i < balls.length; i++) {
@@ -228,6 +229,6 @@ function clearballs(num){
 for(var i=0;i<num;i++){
   balls[i].exists=false
   count=count-num;
-  para.textContent = '还剩 ' + count + ' 个球'+'<br>不等了,现在就清除<input type=number max=100 style=\'border:0;background-color:#000000\' onblur=\'clearballs(this.value)\'>个球<br>或..<button onclick=\'clearballs(1)\'>清除1个</button><button onclick=\'clearballs(5)\'>清除5个</button><button onclick=\'clearballs(10)\'>清除10个</button>';
+  para.textContent = '还剩 ' + count + ' 个球'+'<br>不等了,现在就清除<input type=number max=100 style=\'border:0;background-color:#000000\' onblur=\'clearballs(this.value)\'>个';
  }
 }
