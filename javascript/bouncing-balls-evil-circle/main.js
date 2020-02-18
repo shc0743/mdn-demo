@@ -152,7 +152,7 @@ class EvilCircle extends Shape {
         if (distance < this.size + balls[j].size) {
           balls[j].exists = false;
           count--;
-          para.textContent = '还剩 ' + count + ' 个球';
+          para.textContent = '还剩 ' + count + ' 个球'+"<br>不等了,现在就清除<input type=number onblur='clearballs(this.value)'>个球";
         }
       }
     }
@@ -164,7 +164,7 @@ const balls = [];
 const evilBall = new EvilCircle(
   random(0, width),
   random(0, height),
-  false
+  true
 ); 
 let count = 0;
 
@@ -203,7 +203,7 @@ function loop() {
     );
     balls.push(ball);
     count++;
-    para.textContent = '还剩 ' + count + ' 个球';
+    para.textContent = '还剩 ' + count + ' 个球'+"<br>不等了,现在就清除<input type=number onblur='clearballs(this.value)'>个球";
   }
 
   for (let i = 0; i < balls.length; i++) {
@@ -211,7 +211,11 @@ function loop() {
       balls[i].draw();
       balls[i].update();
       balls[i].collisionDetect();
-      balls[i].onclick=function(){this=undefined}
+      balls[i].onclick=function(){
+  this.exists=false
+  count=count-num;
+  para.textContent = '还剩 ' + count + ' 个球'+"<br>不等了,现在就清除<input type=number onblur='clearballs(this.value)'>个球";
+      }
     }
   }
 
@@ -220,4 +224,12 @@ function loop() {
   evilBall.collisionDetect();
 
   requestAnimationFrame(loop);
+}
+
+function clearballs(num){
+for(var i=0;i<num;i++){
+  balls[i].exists=false
+  count=count-num;
+  para.textContent = '还剩 ' + count + ' 个球'+"<br>不等了,现在就清除<input type=number onblur='clearballs(this.value)'>个球";
+ }
 }
