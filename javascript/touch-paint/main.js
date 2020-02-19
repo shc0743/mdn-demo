@@ -54,9 +54,9 @@ try{
     setTimeout(zr,80)
     } else if(tmpzr==99){
     setconsole.innerHTML+="<button onclick=\"writeconsole.hidden=0\">写控制台</button><span id=writeconsole hidden><textarea id=writevalueconsole cols=50 rows=1></textarea><button onclick=\"log(writevalueconsole.value);writevalueconsole.value='';writeconsole.hidden=1\">确定</button></span><button onclick='print()'>打印</button>"
-    setconsole.innerHTML+='<div style="font-size=8px">起终点标记<select disabled id=statorendmarker><option value="1" selected>ON</option><option value="0">OFF</option></select></div>'
     document.getElementById("canvasize").disabled=0
     document.getElementById("statorendmarker").disabled=0
+    statorendmarker=1
     setTimeout(zr,3000)
     } else if(tmpzr>99){
   el.addEventListener("touchstart", handleStart, false);
@@ -91,9 +91,12 @@ function handleStart(evt) {
     ongoingTouches.push(copyTouch(touches[i]));
     ctx.beginPath();
     ctx.fillStyle = colorForTouch(touches[i]);
-    if(statorendmarker.value=="1"){
+    if(statorendmarker=="1"){
     ctx.arc(touches[i].pageX, touches[i].pageY, 4, 0, 2 * Math.PI, false);
     // 在起点画一个圆
+    log("厌烦了起终点标记?<a href='javascript:statorendmarker=0;log(\"关闭成功!\")'>关闭它</a>")
+    } else {
+    log("想念了起终点标记?<a href='javascript:statorendmarker=1;log(\"打开成功!\")'>打开它</a>")
     }
     ctx.fill();
     log("第 " + i + " 个触摸已开始。");
@@ -143,9 +146,12 @@ function handleEnd(evt) {
       ctx.beginPath();
       ctx.moveTo(ongoingTouches[idx].pageX, ongoingTouches[idx].pageY);
       ctx.lineTo(touches[i].pageX, touches[i].pageY);
-    if(statorendmarker.value=="1"){
+      if(statorendmarker=="1"){
       ctx.fillRect(touches[i].pageX - 4, touches[i].pageY - 4, 8, 8);
+      log("厌烦了起终点标记?<a href='javascript:statorendmarker=0;log(\"关闭成功!\")'>关闭它</a>")
       // 在终点画一个正方形
+      } else {
+      log("想念了起终点标记?<a href='javascript:statorendmarker=1;log(\"打开成功!\")'>打开它</a>")
       }
       log("<button onclick='location.reload(1)'>重置</button>")
       log("触摸结束。");
