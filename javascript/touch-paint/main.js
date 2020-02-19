@@ -25,6 +25,19 @@ startup();
 
 function startup() {
 try{
+  var tmpzr=0
+  var zr=function(){
+    tmpzr++;
+    log("正在载入..."+tmpzr+"%")
+    if(tmpzr<20&&tmpzr>-1){
+    setTimeout(zr,750)
+    } else if(tmpzr<50&&tmpzr>19){
+    srtTimeout(zr,350)
+    } else if(tmpzr<80&&tmpzr>49){
+    setTimeout(zr,500)
+    } else if(tmpzr>79&&tmpzr<100){
+    setTimeout(zr,300)
+    } else if(tmpzr>99){
   el.width = 600;
   el.height = 600;
   el.addEventListener("touchstart", handleStart, false);
@@ -32,6 +45,12 @@ try{
   el.addEventListener("touchcancel", handleCancel, false);
   el.addEventListener("touchmove", handleMove, false);
   log("初始化成功。");
+    } else {
+      throw 'Err in function "zr" '+tmpzr
+    }
+  }
+  log("正在载入..."+tmpzr+"%")
+  setTimeout(zr,1000)
  }catch(err){
   log("初始化失败,请查看错误报告: "+err)
  }
