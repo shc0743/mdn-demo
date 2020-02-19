@@ -228,15 +228,21 @@ function ongoingTouchIndexById(idToFind) {
   return -1;    // 未找到
 }
 
-function log(msg) {
+function log(msg,long) {
   const p = document.getElementById('log');
   var a=new Date().getMilliseconds()
   if(a<10){a="00"+a} else 
   if(a<100){a="0"+a};
+  if(long){
+  p.innerHTML =
+    Math.ceil(new Date().getFullYear()/100)+" Century "+new Date().getFullYear()+" Year "+(new Date().getMonth()+1)+" Month "+new Date().getDate()+" Day "+ 
+    new Date().toString().substring(16, 24)+"."+ a + '\n' + msg + "\n" + p.innerHTML;
+    return false;
+  }
   p.innerHTML =
     Math.ceil(new Date().getFullYear()/100)+" Century "+new Date().getFullYear()+" Year "+(new Date().getMonth()+1)+" Month "+new Date().getDate()+" Day "+ 
     new Date().toString().substring(16, 24)+"."+ a + ' ' + msg + "\n" + p.innerHTML;
-  if(p.innerHTML.splid("\n").lenggh-1>5000){
+  if(p.innerHTML.splid("\n").length-1>5000){
   p.innerHTML=
     Math.ceil(new Date().getFullYear()/100)+" Century "+new Date().getFullYear()+" Year "+(new Date().getMonth()+1)+" Month "+new Date().getDate()+" Day "+ 
     new Date().toString().substring(16, 24)+"."+ a + ' ' + "\n您的记录大于5000行,为了保证系统的稳定性,已为您自动清除记录" + "\n" + p.innerHTML;
