@@ -25,7 +25,7 @@ startup();
 
 function startup() {
 try{
-  document.getElementById("log").style=""
+  document.getElementById("log").style.border="0 solid"
   var tmpzr=0
   var zr=function(){
     tmpzr++;
@@ -35,13 +35,13 @@ try{
     setTimeout(zr,750)
     } else if(tmpzr<50){
     document.getElementById("log").style.border="1px solid #cccccc"
-    setTimeout(zr,350)
+    setTimeout(zr,250)
     } else if(tmpzr<80){
     el.width = 600;
-    setTimeout(zr,500)
+    setTimeout(zr,350)
     } else if(tmpzr<100){
     el.height = 600;
-    setTimeout(zr,300)
+    setTimeout(zr,80)
     } else if(tmpzr>99){
   el.addEventListener("touchstart", handleStart, false);
   el.addEventListener("touchend", handleEnd, false);
