@@ -131,7 +131,7 @@ function handleEnd(evt) {
       ctx.beginPath();
       ctx.moveTo(ongoingTouches[idx].pageX, ongoingTouches[idx].pageY);
       ctx.lineTo(touches[i].pageX, touches[i].pageY);
-      ctx.fillRect(touches[i].pageX - 4, touches[i].pageY - 4, 8, 8);
+      ctx.fillRect(touches[i].pageX, touches[i].pageY, 4, 0,Math.PI*2,false);
       // 在终点画一个正方形
       ongoingTouches.splice(idx, 1);  // 用完后移除
     } else {
@@ -184,7 +184,7 @@ log("撤销失败")
 }
 el.width=circlecanvasize
 el.height=circlecanvasize
-document.querySelectorAll("select[onchange='setCanvaSize()']")[0].querySelectorAll("option[value="+circlecanvasize+"]").selected=true
+//document.querySelectorAll("select[onchange='setCanvaSize()']")[0].querySelectorAll("option[value="+circlecanvasize+"]").selected=true
 delete circlecanvasize
 log("您可以撤销3分钟内的操作。")
 log("您已成功撤销操作")
