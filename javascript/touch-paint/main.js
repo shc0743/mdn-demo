@@ -55,7 +55,6 @@ try{
     } else if(tmpzr==99){
     setconsole.innerHTML+="<button onclick=\"writeconsole.hidden=0\">写控制台</button><span id=writeconsole hidden><textarea id=writevalueconsole cols=50 rows=1></textarea><button onclick=\"log(writevalueconsole.value);writevalueconsole.value='';writeconsole.hidden=1\">确定</button></span><button onclick='print()'>打印</button>"
     document.getElementById("canvasize").disabled=0
-    document.getElementById("statorendmarker").disabled=0
     statorendmarker=1
     setTimeout(zr,3000)
     } else if(tmpzr>99){
