@@ -242,9 +242,9 @@ function log(msg,long) {
   p.innerHTML =
     Math.ceil(new Date().getFullYear()/100)+" Century "+new Date().getFullYear()+" Year "+(new Date().getMonth()+1)+" Month "+new Date().getDate()+" Day "+ 
     new Date().toString().substring(16, 24)+"."+ a + ' ' + msg + "\n" + p.innerHTML;
-  if(p.innerHTML.split("\n").length-1>5000){
+  if(p.innerHTML.split("\n").length-1>1500){
   p.innerHTML=
     Math.ceil(new Date().getFullYear()/100)+" Century "+new Date().getFullYear()+" Year "+(new Date().getMonth()+1)+" Month "+new Date().getDate()+" Day "+ 
-    new Date().toString().substring(16, 24)+"."+ a + ' ' + "\n您的记录大于5000行,为了保证系统的稳定性,已为您自动清除记录" + "\n" + p.innerHTML;
+    new Date().toString().substring(16, 24)+"."+ a + ' ' + "\n您的记录大于1500行,为了保证系统的稳定性,已为您自动清除记录" + "\n" + p.innerHTML;
   }
 }
