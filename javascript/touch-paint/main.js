@@ -40,18 +40,18 @@ try{
     if(tmpzr<20&&tmpzr>-1){
     document.getElementById("log").style.border="1px solid"
     setconsole.style.border="1px solid"
-    setTimeout(zr,500)
+    setTimeout(zr,250)
     } else if(tmpzr<50){
     document.getElementById("log").style.border="1px solid #cccccc"
     setconsole.style.border="1px solid #cccccc"
-    setTimeout(zr,250)
+    setTimeout(zr,100)
     } else if(tmpzr<80){
     setconsole.innerHTML="<button onclick='document.getElementById(\"log\").hidden=1;this.hidden=1;echoconsole.hidden=0' id=hiddenconsole>隐藏控制台</button><button onclick='document.getElementById(\"log\").hidden=0;this.hidden=1;hiddenconsole.hidden=0' hidden id=echoconsole>显示控制台</button>"
     el.width = 600;
-    setTimeout(zr,350)
+    setTimeout(zr,75)
     } else if(tmpzr<99){
     el.height = 600;
-    setTimeout(zr,80)
+    setTimeout(zr,35)
     } else if(tmpzr==99){
     setconsole.innerHTML+="<button onclick=\"writeconsole.hidden=0\">写控制台</button><span id=writeconsole hidden><textarea id=writevalueconsole cols=50 rows=1></textarea><button onclick=\"log(writevalueconsole.value);writevalueconsole.value='';writeconsole.hidden=1\">确定</button></span><button onclick='print()'>打印</button>"
     document.getElementById("canvasize").disabled=0
