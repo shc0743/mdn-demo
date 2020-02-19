@@ -29,7 +29,7 @@ try{
   var tmpzr=0
   var rightpw=localStorage.getItem("touchpw")
   var checkPw3=function(){
-  if(document.querySelectorAll("input[name='inputpw']")[0].value==rightpw){log("密码正确!");setTimeout(zr,500)} else {log("密码错误!");log("请输入密码:<input name=inputpw><button onclick='ckeckPw3()'>确定</button>")}
+  if(document.querySelectorAll("input[name='inputpw']")[0].value==rightpw){log("密码正确!");setonpw.hidden=0;setTimeout(zr,500)} else {log("密码错误!");log("请输入密码:<input name=inputpw><button onclick='ckeckPw3()'>确定</button>")}
   }
   var zr=function(){
     tmpzr++;
@@ -39,6 +39,7 @@ try{
     var ynpass=true
     var errcount=0
     if(rightpw=="") rightpw=null
+    if(rightpw!==null) setonpw.hidden=1
     //log("<input name=inputpw hidden>")
     }
     if(tmpzr<20&&tmpzr>-1){
