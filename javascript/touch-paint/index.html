@@ -11,7 +11,7 @@
   <canvas id="canvas">
     当前浏览器不支持 canvas 元素
   </canvas>
-<br>R:<input useto=color size=5>G:<input useto=color size=5>B:<input useto=color size=5><img width=30 height=30 onclick="(function(){var a=document.querySelectorAll('input[useto=\'color\']');for(var i=0;i<a.length;i++){a[i].value='255';}colr=255;colg=255;colb=255;})()" src="2C3D65E9-DBFF-4F89-99A5-76534BE20631.jpeg">
+<br>R:<input useto=color size=5>G:<input useto=color size=5>B:<input useto=color size=5><img width=30 height=30 onclick="(function(){var a=document.querySelectorAll('input[useto=\'color\']');for(var i=0;i<a.length;i++){a[i].value='255';a[i].focus();a[i].blur()}colr=255;colg=255;colb=255;})()" src="2C3D65E9-DBFF-4F89-99A5-76534BE20631.jpeg">
 <select disabled id=canvasize onchange="setCanvaSize(this.value)"><option value=600 selected>600×600</option><option value=800>800×800</option><option value=1000>1000×1000</option><option value=1500>1500×1500</option></select>
 <div id=setonpw hidden>设置保护密码:<input useto=setpw max=99999999 type=number onblur="checkPw1(this.value)">确认密码:<input useto=setpw disabled max=99999999 onblur="checkPw2(this.value)" type=number><button useto=setpw onclick="setpw()" disabled>确定</button></div>
 </div>
