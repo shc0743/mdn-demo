@@ -152,7 +152,7 @@ function handleEnd(evt) {
       } else {
       log("想念了起终点标记?<a href='javascript:statorendmarker=1;log(\"打开成功!\")'>打开它</a>")
       }
-      log("<button onclick='location.reload(1)'><span style="color:red">刷新(慎用!!!)</span></button>")
+      log("<button onclick='location.reload(1)'><span style='color:red'>刷新(慎用!!!)</span></button>")
       log("画板太乱?<a href='javascript:el.width=50;el.width=canvasize.value;log(\"操作成功!\")'>重置</a>")
       log("触摸结束。");
       ongoingTouches.splice(idx, 1);  // 用完后移除
