@@ -4,17 +4,17 @@ const colR = document.querySelectorAll("input[useto=\"color\"]")
 const ctx = el.getContext("2d")
 colR[0].onblur=function(){
 if(this.value=="") this.value=0;
-colr=Number(this.value)
+colr=parseInt(this.value)
 log("您已把颜色设置为:("+colr+","+colg+","+colb+")")
 }
 colR[1].onblur=function(){
 if(this.value=="") this.value=0;
-colg=Number(this.value)
+colg=parseInt(this.value)
 log("您已把颜色设置为:("+colr+","+colg+","+colb+")")
 }
 colR[2].onblur=function(){
 if(this.value=="") this.value=0;
-colb=Number(this.value)
+colb=parseInt(this.value)
 log("您已把颜色设置为:("+colr+","+colg+","+colb+")")
 }
 colR[2].value=0
@@ -120,7 +120,7 @@ function handleMove(evt) {
     } else {
       log("无法确定下一个触摸点。");
       if(colorerr){
-        log("请输入0-255的颜色!")
+        log("请输入0-255的数字!")
       }
     }
   }
