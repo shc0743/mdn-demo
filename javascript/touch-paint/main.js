@@ -2,14 +2,21 @@ const ongoingTouches = [];
 const el = document.getElementById("canvas");
 const colR = document.querySelectorAll("input[useto=\"color\"]")
 const ctx = el.getContext("2d")
-colR[2].onblur=function(){
-if(this.value=="") this.value=0
+colR[0].onblur=function(){
+if(this.value=="") this.value=0;
+colr=Number(this.value)
 }
-colR[1].onblur=colR[2].onblur
-colR[0].onblur=colR[1].onblur
+colR[1].onblur=function(){
+if(this.value=="") this.value=0;
+colg=Number(this.value)
+}
+colR[2].onblur=function(){
+if(this.value=="") this.value=0;
+colb=Number(this.value)
+}
 colR[2].value=0
-colR[1].value=colR[2].value
-colR[0].value=colR[1].value
+colR[1].value=0
+colR[0].value=0
 var colr=Number(colR[0].value)
 var colg=Number(colR[1].value)
 var colb=Number(colR[2].value)
