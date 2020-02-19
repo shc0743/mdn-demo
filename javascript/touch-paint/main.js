@@ -2,9 +2,6 @@ const ongoingTouches = [];
 const el = document.getElementById("canvas");
 const colR = document.querySelectorAll("input[useto=\"color\"]")
 const ctx = el.getContext("2d")
-var colr=Number(colR[0].value)
-var colg=Number(colR[1].value)
-var colb=Number(colR[2].value)
 colR[2].onblur=function(){
 if(this.value=="") this.value=0
 }
@@ -13,10 +10,16 @@ colR[0].onblur=colR[1].onblur
 colR[2].value=0
 colR[1].value=colR[2].value
 colR[0].value=colR[1].value
+var colr=Number(colR[0].value)
+var colg=Number(colR[1].value)
+var colb=Number(colR[2].value)
+
+alert(colr+' '+colg+' '+colb)
 
 startup();
 
 function startup() {
+try{
   el.width = 600;
   el.height = 600;
   el.addEventListener("touchstart", handleStart, false);
@@ -24,6 +27,9 @@ function startup() {
   el.addEventListener("touchcancel", handleCancel, false);
   el.addEventListener("touchmove", handleMove, false);
   log("初始化成功。");
+ }catch(err){
+  log("初始化失败,请查看错误报告: "+err)
+ }
 }
 
 function handleStart(evt) {
