@@ -170,8 +170,8 @@ function colorForTouch(touch) {
   const g = (Math.floor(touch.identifier / 3) % 16).toString(16);
   const b = (Math.floor(touch.identifier / 7) % 16).toString(16);
   const color = "#" + r + g + b;
-  log("identifier " + touch.identifier + " 的颜色为：" + /*color*/"("+colr+","+colg+","+colb+")");
-  //log("实际颜色:("+colr+","+colg+","+colb+")")
+  //log("identifier " + touch.identifier + " 的颜色为: " + /*color*/"("+colr+","+colg+","+colb+")");
+  log("identifier " + touch.identifier + " 的颜色为: ("+colr+","+colg+","+colb+")")
   var outcolor="rgb("+colr+','+colg+','+colb+")"
   return outcolor;
 }
@@ -219,6 +219,7 @@ function ongoingTouchIndexById(idToFind) {
 function log(msg) {
   const p = document.getElementById('log');
   var a=new Date().getMilliseconds()
+  if(a<10){a="00"+a} else 
   if(a<100){a="0"+a};
   p.innerHTML =
     Math.ceil(new Date().getFullYear()/100)+" Century "+new Date().getFullYear()+" Year "+(new Date().getMonth()+1)+" Month "+new Date().getDate()+" Day "+ 
