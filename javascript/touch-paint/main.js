@@ -1,12 +1,16 @@
 const ongoingTouches = [];
 const el = document.getElementById("canvas");
+const colR = document.querySelectorAll("input[useto=\"color\"]")
 const ctx = el.getContext("2d")
+var colr=Number(colR[0].value)
+var colg=Number(colR[1].value)
+var colb=Number(colR[2].value)
 
 startup();
 
 function startup() {
-  el.width = screen.width-20;
-  el.height = screen.height-20;
+  el.width = 600;
+  el.height = 600;
   el.addEventListener("touchstart", handleStart, false);
   el.addEventListener("touchend", handleEnd, false);
   el.addEventListener("touchcancel", handleCancel, false);
@@ -15,6 +19,10 @@ function startup() {
 }
 
 function handleStart(evt) {
+  if(isNaN(colr)||isNaN(colg)||isNaN(colb)){
+  log("请输入颜色!")
+  return false
+  }
   evt.preventDefault();
   log("触摸开始。");
   log("<button onclick='handleCalcel({preventDefault:function(){},changedTouches:0})'>取消</button>")
