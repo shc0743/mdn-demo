@@ -183,7 +183,7 @@ function setCanvaSize(size){
 circlecanvasize=el.width
 el.width=size
 el.height=size
-log("您已成功把触控板大小更新到"+size+"×"+size+" <a href='javascript:cancelSetCanvaSize()'>撤销</a>")
+log("您已成功把触控板大小更新到"+size+"×"+size+" <a hidden href='javascript:cancelSetCanvaSize()'>撤销</a>")
 setTimeout("delete circlecanvasize",180000)
 }
 function cancelSetCanvaSize(){
