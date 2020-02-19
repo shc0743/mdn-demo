@@ -54,7 +54,7 @@ try{
     setTimeout(zr,80)
     } else if(tmpzr==99){
     setconsole.innerHTML+="<button onclick=\"writeconsole.hidden=0\">写控制台</button><span id=writeconsole hidden><textarea id=writevalueconsole cols=50 rows=1></textarea><button onclick=\"log(writevalueconsole.value);writevalueconsole.value='';writeconsole.hidden=1\">确定</button></span><button onclick='print()'>打印</button>"
-    setconsole.innerHTML+='<br>起终点标记<select disabled id=statorendmarker><option value="1" selected>ON</option><option value="0">OFF</option></select>'
+    setconsole.innerHTML+='<br><span style="font-size=10px">起终点标记</span><select disabled id=statorendmarker><option value="1" selected>ON</option><option value="0">OFF</option></select>'
     document.getElementById("canvasize").disabled=0
     document.getElementById("statorendmarker").disabled=0
     setTimeout(zr,3000)
