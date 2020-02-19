@@ -54,13 +54,14 @@ try{
     setTimeout(zr,80)
     } else if(tmpzr==99){
     setconsole.innerHTML+="<button onclick=\"writeconsole.hidden=0\">写控制台</button><span id=writeconsole hidden><textarea id=writevalueconsole cols=50 rows=1></textarea><button onclick=\"log(writevalueconsole.value);writevalueconsole.value='';writeconsole.hidden=1\">确定</button></span><button onclick='print()'>打印</button>"
+    document.getElementById("canvasize").disabled=0
+    document.getElementById("statorendmarker").disabled=0
     setTimeout(zr,3000)
     } else if(tmpzr>99){
   el.addEventListener("touchstart", handleStart, false);
   el.addEventListener("touchend", handleEnd, false);
   el.addEventListener("touchcancel", handleCancel, false);
   el.addEventListener("touchmove", handleMove, false);
-  document.getElementById("canvasize").disabled=0
   log("初始化成功。");
     } else {
       throw 'Err in function "zr" '+tmpzr
@@ -89,8 +90,10 @@ function handleStart(evt) {
     ongoingTouches.push(copyTouch(touches[i]));
     ctx.beginPath();
     ctx.fillStyle = colorForTouch(touches[i]);
+    if(statorendmarker.value=="1"){
     ctx.arc(touches[i].pageX, touches[i].pageY, 4, 0, 2 * Math.PI, false);
     // 在起点画一个圆
+    }
     ctx.fill();
     log("第 " + i + " 个触摸已开始。");
   }
@@ -139,8 +142,10 @@ function handleEnd(evt) {
       ctx.beginPath();
       ctx.moveTo(ongoingTouches[idx].pageX, ongoingTouches[idx].pageY);
       ctx.lineTo(touches[i].pageX, touches[i].pageY);
+    if(statorendmarker.value=="1"){
       ctx.fillRect(touches[i].pageX - 4, touches[i].pageY - 4, 8, 8);
       // 在终点画一个正方形
+      }
       log("<button onclick='location.reload(1)'>重置</button>")
       log("触摸结束。");
       ongoingTouches.splice(idx, 1);  // 用完后移除
