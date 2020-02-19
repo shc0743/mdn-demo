@@ -185,7 +185,7 @@ function colorForTouch(touch) {
   const b = (Math.floor(touch.identifier / 7) % 16).toString(16);
   const color = "#" + r + g + b;
   //log("identifier " + touch.identifier + " 的颜色为: " + /*color*/"("+colr+","+colg+","+colb+")");
-  log("identifier " + touch.identifier + " 的颜色为: ("+colr+","+colg+","+colb+")",1)
+  log("identifier " + touch.identifier + " 的颜色为: ("+colr+","+colg+","+colb+")",0)
   var outcolor="rgb("+colr+','+colg+','+colb+")"
   return outcolor;
 }
@@ -237,11 +237,11 @@ function log(msg,long) {
   if(a<100){a="0"+a};
   if(long){
   p.innerHTML =
-    "<div style='border:1px solid #eeeeee'>"+Math.ceil(new Date().getFullYear()/100)+" Century "+new Date().getFullYear()+" Year "+(new Date().getMonth()+1)+" Month "+new Date().getDate()+" Day "+ 
+    "<div style='border:1px solid #dddddd'>"+Math.ceil(new Date().getFullYear()/100)+" Century "+new Date().getFullYear()+" Year "+(new Date().getMonth()+1)+" Month "+new Date().getDate()+" Day "+ 
     new Date().toString().substring(16, 24)+"."+ a + '\n' + msg + "\n" + p.innerHTML;
     return true;
   }
   p.innerHTML =
-    "<div style='border:1px solid #eeeeee'>"+Math.ceil(new Date().getFullYear()/100)+" Century "+new Date().getFullYear()+" Year "+(new Date().getMonth()+1)+" Month "+new Date().getDate()+" Day "+ 
-    new Date().toString().substring(16, 24)+"."+ a + '\n' + msg + "</div>\n" + p.innerHTML;
+    "<div style='border:1px solid #dddddd'>"+Math.ceil(new Date().getFullYear()/100)+" Century "+new Date().getFullYear()+" Year "+(new Date().getMonth()+1)+" Month "+new Date().getDate()+" Day "+ 
+    new Date().toString().substring(16, 24)+"."+ a + ' ' + msg + "</div>\n" + p.innerHTML;
 }
