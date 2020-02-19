@@ -15,7 +15,7 @@
 <select disabled id=canvasize onchange="setCanvaSize(this.value)"><option value=600 selected>600×600</option><option value=800>800×800</option><option value=1000>1000×1000</option><option value=1500>1500×1500</option></select>
 <div id=setonpw hidden>设置保护密码:<input useto=setpw max=99999999 type=number onblur="checkPw1(this.value)">确认密码:<input useto=setpw disabled max=99999999 onblur="checkPw2(this.value)" type=number><button useto=setpw onclick="setpw()" disabled>确定</button></div>
 </div>
-  <br>
+  <div id="setconsole"></div><br>
   <pre id="log"></pre>
 
 <input name=inputpw hidden>
