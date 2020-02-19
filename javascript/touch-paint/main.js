@@ -19,8 +19,8 @@ function startup() {
 }
 
 function handleStart(evt) {
-  if(isNaN(colr)||isNaN(colg)||isNaN(colb)){
-  log("请输入颜色!")
+  if(isNaN(colr)||isNaN(colg)||isNaN(colb)||colr<0||colr>255||colg<0||colg>255||colb<0||colb>255||colr==""||colg==""||colb==""){
+  log("请输入0-255的颜色!")
   return false
   }
   evt.preventDefault();
@@ -109,7 +109,8 @@ function colorForTouch(touch) {
   const b = (Math.floor(touch.identifier / 7) % 16).toString(16);
   const color = "#" + r + g + b;
   log("identifier " + touch.identifier + " 的颜色为：" + color);
-  return color;
+  var outcolor="rgb("+colr+','+colg+','+colb+")"
+  return outcolor;
 }
 
 function copyTouch(touch) {
