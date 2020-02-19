@@ -167,6 +167,11 @@ function copyTouch(touch) {
   };
 }
 
+function setCanvaSize(size){
+el.width=size
+el.height=size
+}
+
 function ongoingTouchIndexById(idToFind) {
   for (let i = 0; i < ongoingTouches.length; i++) {
     const id = ongoingTouches[i].identifier;
