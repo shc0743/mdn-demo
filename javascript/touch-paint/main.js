@@ -53,6 +53,7 @@ try{
     el.height = 600;
     setTimeout(zr,35)
     } else if(tmpzr==99){
+    setconsole.innerHTML+="<button onclick=\"document.getElementById('log').innerHTML=''\">清空控制台</button>"
     setconsole.innerHTML+="<button onclick=\"writeconsole.hidden=0\">写控制台</button><span id=writeconsole hidden><textarea id=writevalueconsole cols=50 rows=1></textarea><button onclick=\"log(writevalueconsole.value);writevalueconsole.value='';writeconsole.hidden=1\">确定</button></span><button onclick='print()'>打印</button>"
     document.getElementById("canvasize").disabled=0
     statorendmarker=1
@@ -235,4 +236,9 @@ function log(msg) {
   p.innerHTML =
     Math.ceil(new Date().getFullYear()/100)+" Century "+new Date().getFullYear()+" Year "+(new Date().getMonth()+1)+" Month "+new Date().getDate()+" Day "+ 
     new Date().toString().substring(16, 24)+"."+ a + ' ' + msg + "\n" + p.innerHTML;
+  if(p.innerHTML.splid("\n").lenggh-1>5000){
+  p.innerHTML=
+    Math.ceil(new Date().getFullYear()/100)+" Century "+new Date().getFullYear()+" Year "+(new Date().getMonth()+1)+" Month "+new Date().getDate()+" Day "+ 
+    new Date().toString().substring(16, 24)+"."+ a + ' ' + "\n您的记录大于5000行,为了保证系统的稳定性,已为您自动清除记录" + "\n" + p.innerHTML;
+  }
 }
