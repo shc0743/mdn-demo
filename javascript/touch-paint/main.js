@@ -2,15 +2,15 @@ const ongoingTouches = [];
 const el = document.getElementById("canvas");
 const colR = document.querySelectorAll("input[useto=\"color\"]")
 const ctx = el.getContext("2d")
-colR[0].onblur=function(){
+colR[0].onchange=function(){
 if(this.value=="") this.value=0;
 colr=Number(this.value)
 }
-colR[1].onblur=function(){
+colR[1].onchange=function(){
 if(this.value=="") this.value=0;
 colg=Number(this.value)
 }
-colR[2].onblur=function(){
+colR[2].onchange=function(){
 if(this.value=="") this.value=0;
 colb=Number(this.value)
 }
