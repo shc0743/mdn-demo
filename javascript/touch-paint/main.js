@@ -53,7 +53,7 @@ try{
     }
   }
   log("正在载入..."+tmpzr+"%")
-  setTimeout(zr,1000)
+  setTimeout(zr,3000)
  }catch(err){
   log("初始化失败,请查看错误报告: "+err)
  }
