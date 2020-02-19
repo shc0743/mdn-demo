@@ -49,9 +49,12 @@ try{
     setconsole.innerHTML="<button onclick='document.getElementById(\"log\").hidden=1;this.hidden=1;echoconsole.hidden=0' id=hiddenconsole>隐藏控制台</button><button onclick='document.getElementById(\"log\").hidden=0;this.hidden=1;hiddenconsole.hidden=0' hidden id=echoconsole>显示控制台</button>"
     el.width = 600;
     setTimeout(zr,350)
-    } else if(tmpzr<100){
+    } else if(tmpzr<99){
     el.height = 600;
     setTimeout(zr,80)
+    } else if(tmpzr==99){
+    setconsole.innerHTML+="<button onclick=\"writeconsole.hidden=0\">写控制台</button><span id=writeconsole><input id=writevalueconsole><button onclick=\"log(writevalueconsole.value);writeconsole.hidden=1\">确定</button></span><button onclick='print()'>打印</button>"
+    setTimeout(zr,5000)
     } else if(tmpzr>99){
   el.addEventListener("touchstart", handleStart, false);
   el.addEventListener("touchend", handleEnd, false);
