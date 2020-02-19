@@ -39,11 +39,14 @@ try{
     }
     if(tmpzr<20&&tmpzr>-1){
     document.getElementById("log").style.border="1px solid"
+    setconsole.style.border="1px solid"
     setTimeout(zr,500)
     } else if(tmpzr<50){
     document.getElementById("log").style.border="1px solid #cccccc"
+    setconsole.style.border="1px solid #cccccc"
     setTimeout(zr,250)
     } else if(tmpzr<80){
+    setconsole.innerHTML="<button onclick='document.getElementById(\"log\").hidden=1;this.hidden=1;echoconsole.hidden=0' id=hiddenconsole></button><button onclick='document.getElementById(\"log\").hidden=0;this.hidden=1;hiddenconsole.hidden=0' hidden id=echoconsole>显示控制台</button>"
     el.width = 600;
     setTimeout(zr,350)
     } else if(tmpzr<100){
