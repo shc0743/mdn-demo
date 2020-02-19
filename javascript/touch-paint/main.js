@@ -36,7 +36,7 @@ try{
     }
     if(tmpzr<20&&tmpzr>-1){
     document.getElementById("log").style.border="1px solid"
-    setTimeout(zr,750)
+    setTimeout(zr,500)
     } else if(tmpzr<50){
     document.getElementById("log").style.border="1px solid #cccccc"
     setTimeout(zr,250)
