@@ -2,15 +2,15 @@ const ongoingTouches = [];
 const el = document.getElementById("canvas");
 const colR = document.querySelectorAll("input[useto=\"color\"]")
 const ctx = el.getContext("2d")
-colR[0].onchange=function(){
+colR[0].onblur=function(){
 if(this.value=="") this.value=0;
 colr=Number(this.value)
 }
-colR[1].onchange=function(){
+colR[1].onblur=function(){
 if(this.value=="") this.value=0;
 colg=Number(this.value)
 }
-colR[2].onchange=function(){
+colR[2].onblur=function(){
 if(this.value=="") this.value=0;
 colb=Number(this.value)
 }
@@ -56,7 +56,7 @@ try{
   log("正在载入..."+tmpzr+"%")
   setTimeout(zr,3000)
  }catch(err){
-  log("初始化失败,请查看错误报告: "+err)
+  log("载入失败,请查看错误报告: "+err)
  }
 }
 
