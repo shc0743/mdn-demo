@@ -170,8 +170,8 @@ function colorForTouch(touch) {
   const g = (Math.floor(touch.identifier / 3) % 16).toString(16);
   const b = (Math.floor(touch.identifier / 7) % 16).toString(16);
   const color = "#" + r + g + b;
-  log("identifier " + touch.identifier + " 的颜色为：" + color);
-log("实际颜色:("+colr+","+colg+","+colb+")")
+  log("identifier " + touch.identifier + " 的颜色为：" + /*color*/"("+colr+","+cplg+","+colb+")");
+  //log("实际颜色:("+colr+","+colg+","+colb+")")
   var outcolor="rgb("+colr+','+colg+','+colb+")"
   return outcolor;
 }
