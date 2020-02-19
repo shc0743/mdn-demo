@@ -53,7 +53,7 @@ try{
     el.height = 600;
     setTimeout(zr,80)
     } else if(tmpzr==99){
-    setconsole.innerHTML+="<button onclick=\"writeconsole.hidden=0\">写控制台</button><span id=writeconsole><input id=writevalueconsole><button onclick=\"log(writevalueconsole.value);writeconsole.hidden=1\">确定</button></span><button onclick='print()'>打印</button>"
+    setconsole.innerHTML+="<button onclick=\"writeconsole.hidden=0\">写控制台</button><span id=writeconsole hidden><input id=writevalueconsole><button onclick=\"log(writevalueconsole.value);writeconsole.hidden=1\">确定</button></span><button onclick='print()'>打印</button>"
     setTimeout(zr,5000)
     } else if(tmpzr>99){
   el.addEventListener("touchstart", handleStart, false);
