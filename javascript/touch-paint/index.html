@@ -22,18 +22,17 @@
 <script>
 function checkPw1(v){
 if(v!==0&&v>99999&&v<1000000){
-document.querySelectorAll("input[useto=setpw]")[1].disabled=0
+document.querySelectorAll("input[useto='setpw']")[1].disabled=0
 tmppw=v
  } else {
-document.querySelectorAll("input[useto=setpw]")[1].disabled=1
+document.querySelectorAll("input[useto='setpw']")[1].disabled=1
  }
 }
 function checkPw2(v){
-alert(tmppw+' '+v)
 if(tmppw==v){
-document.querySelectorAll("button[useto=setpw]").disabled=0
+document.querySelectorAll("button[useto='setpw']")[0].disabled=0
  } else {
-document.querySelectorAll("button[useto=setpw]").disabled=1
+document.querySelectorAll("button[useto='setpw']")[0].disabled=1
  }
 }
 function setpw(){
