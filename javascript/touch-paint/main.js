@@ -8,9 +8,11 @@ var colb=Number(colR[2].value)
 colb.onblur=function(){
 if(this.value=="") this.value=0
 }
-colr.onblur=colg.onblur=colb.onblur
+colg.onblur=colb.onblur
+colr.onblur=colg.onblur
 colb.value=0
-colr.value=colg.value=colb.value
+colg.value=colb.value
+colr.value=colg.value
 
 startup();
 
