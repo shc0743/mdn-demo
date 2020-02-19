@@ -128,7 +128,7 @@ function handleMove(evt) {
 
 function handleEnd(evt) {
   evt.preventDefault();
-  log("触摸结束。");
+  log("触摸即将结束...");
   log("<button onclick='location.reload(1)'>重置</button>")
   const touches = evt.changedTouches;
   for (let i = 0; i < touches.length; i++) {
@@ -143,9 +143,12 @@ function handleEnd(evt) {
       //ctx.fillRect(touches[i].pageX-4, touches[i].pageY-4, 8, 8);
       ctx.arc(touches[i].pageX, touches[i].pageY, 4, 0, 2 * Math.PI, false);
       // 在终点画一个正方形
+      log("<button onclick='location.reload(1)'>重置</button>")
+      log("触摸结束。");
       ongoingTouches.splice(idx, 1);  // 用完后移除
     } else {
-      log("无法确定下一个触摸点。");
+      log("错误:无法确定触摸点。");
+      log("触摸失败。");
     }
   }
 }
