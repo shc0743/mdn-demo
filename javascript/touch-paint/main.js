@@ -57,6 +57,7 @@ try{
     setconsole.innerHTML+="<button onclick=\"writeconsole.hidden=0\">写控制台</button><span id=writeconsole hidden><textarea id=writevalueconsole cols=50 rows=1></textarea><button onclick=\"log(writevalueconsole.value);writevalueconsole.value='';writeconsole.hidden=1\">确定</button></span><button onclick='print()'>打印</button>"
     document.getElementById("canvasize").disabled=0
     statorendmarker=1
+    statpassreset=0
     setTimeout(zr,700)
     } else if(tmpzr>99){
   el.addEventListener("touchstart", handleStart, false);
@@ -154,7 +155,8 @@ function handleEnd(evt) {
       log("想念了起终点标记?<a href='javascript:statorendmarker=1;log(\"打开成功!\")'>打开它</a>")
       }
       log("<button onclick='if(confirm(\"Are you sure?\")) location.reload(1)'><span style='color:red'>刷新</span></button>")
-      log("画板太乱?<a href='javascript:el.width=50;el.width=canvasize.value;log(\"操作成功!\")'>重置</a>")
+      log("画板太乱?<a href='javascript:el.width=50;el.width=canvasize.value;log(\"操作成功!\");statpassreset=1'>重置</a>")
+      if(statpassreset){log("由于您进行了重置操作,导致系统稳定性下降,需要<a href="javascript:location.reload(1)">重新启动</a>",1)}
       log("触摸结束。");
       ongoingTouches.splice(idx, 1);  // 用完后移除
     } else {
