@@ -66,7 +66,7 @@ function handleStart(evt) {
   }
   evt.preventDefault();
   log("触摸开始。");
-  log("<button onclick='handleCalcel({preventDefault:function(){},changedTouches:0})'>取消</button>")
+  //log("<button onclick='handleCalcel({preventDefault:function(){},changedTouches:0})'>取消</button>")
   const touches = evt.changedTouches;
 
   for (let i = 0; i < touches.length; i++) {
@@ -89,7 +89,7 @@ function handleMove(evt) {
     const idx = ongoingTouchIndexById(touches[i].identifier);
     if (idx >= 0) {
       log("继续第 " + idx + " 个触摸。");
-      log("<button onclick='handleCalcel({preventDefault:function(){},changedTouches:0})'>取消</button>")
+      //log("<button onclick='handleCalcel({preventDefault:function(){},changedTouches:0})'>取消</button>")
       ctx.beginPath();
       log("ctx.moveTo(" + ongoingTouches[idx].pageX + ", " +
         ongoingTouches[idx].pageY + ");");
