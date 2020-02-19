@@ -39,7 +39,7 @@ try{
     var ynpass=true
     var errcount=0
     if(rightpw=="") rightpw=null
-    log("<input name=inputpw hidden>")
+    //log("<input name=inputpw hidden>")
     }
     if(tmpzr<20&&tmpzr>-1){
     document.getElementById("log").style.border="1px solid"
