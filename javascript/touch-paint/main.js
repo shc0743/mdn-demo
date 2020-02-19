@@ -131,7 +131,8 @@ function handleEnd(evt) {
       ctx.beginPath();
       ctx.moveTo(ongoingTouches[idx].pageX, ongoingTouches[idx].pageY);
       ctx.lineTo(touches[i].pageX, touches[i].pageY);
-      ctx.fillRect(touches[i].pageX, touches[i].pageY, 4, 0,Math.PI*2,false);
+      //ctx.fillRect(touches[i].pageX-4, touches[i].pageY-4, 8, 8);
+      ctx.arc(touches[i].pageX, touches[i].pageY, 4, 0, 2 * Math.PI, false);
       // 在终点画一个正方形
       ongoingTouches.splice(idx, 1);  // 用完后移除
     } else {
