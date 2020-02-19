@@ -219,6 +219,6 @@ function ongoingTouchIndexById(idToFind) {
 function log(msg) {
   const p = document.getElementById('log');
   p.innerHTML =
-    Math.ceil(new Date().getFullYear/100)+"Century"+new Date().getFullYear()+"Year"+new Date().getMonth()+"Month"+new Date().getDate()+"Day "+ 
+    Math.ceil(new Date().getFullYear/100)+"Century"+new Date().getFullYear()+"Year"+(new Date().getMonth()+1)+"Month"+new Date().getDate()+"Day "+ 
     new Date().toString().substring(16, 24)+new Date().getMilliseconds() + ' ' + msg + "\n" + p.innerHTML;
 }
