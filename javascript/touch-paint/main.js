@@ -48,7 +48,7 @@ try{
   el.addEventListener("touchend", handleEnd, false);
   el.addEventListener("touchcancel", handleCancel, false);
   el.addEventListener("touchmove", handleMove, false);
-  canvasize.disabled=0
+  document.getElementById("canvasize").disabled=0
   log("初始化成功。");
     } else {
       throw 'Err in function "zr" '+tmpzr
