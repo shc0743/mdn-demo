@@ -54,7 +54,7 @@ try{
     setTimeout(zr,80)
     } else if(tmpzr==99){
     setconsole.innerHTML+="<button onclick=\"writeconsole.hidden=0\">写控制台</button><span id=writeconsole hidden><textarea id=writevalueconsole cols=50 rows=1></textarea><button onclick=\"log(writevalueconsole.value);writevalueconsole.value='';writeconsole.hidden=1\">确定</button></span><button onclick='print()'>打印</button>"
-    setTimeout(zr,5000)
+    setTimeout(zr,3000)
     } else if(tmpzr>99){
   el.addEventListener("touchstart", handleStart, false);
   el.addEventListener("touchend", handleEnd, false);
