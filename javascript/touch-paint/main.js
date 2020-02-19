@@ -27,19 +27,11 @@ function startup() {
 try{
   document.getElementById("log").style.border="0 solid"
   var tmpzr=0
-  var rightpw=localStorage.getItem("touchpw")
-  var checkPw3=function(){
-  if(document.querySelectorAll("input[name='inputpw']")[0].value==rightpw){log("密码正确!");setonpw.hidden=0;setTimeout(zr,500)} else {log("密码错误!");log("请输入密码:<input name=inputpw><button onclick='ckeckPw3()'>确定</button>")}
-  }
   var zr=function(){
     tmpzr++;
     log("正在载入..."+tmpzr+"%")
     if(tmpzr==1){
     colorerr=0
-    var ynpass=true
-    var errcount=0
-    if(rightpw=="") rightpw=null
-    if(rightpw!==null) setonpw.hidden=1
     //log("<input name=inputpw hidden>")
     }
     if(tmpzr<20&&tmpzr>-1){
@@ -47,15 +39,6 @@ try{
     setTimeout(zr,750)
     } else if(tmpzr<50){
     document.getElementById("log").style.border="1px solid #cccccc"
-    if(tmpzr==37){
-    if(ynpass){
-    if(rightpw!==null){
-      log("请输入密码:<input name=inputpw><button onclick='ckeckPw3()'>确定</button>")
-      return false;
-    }
-    setTimeout(zr,250)
-    }
-    }
     setTimeout(zr,250)
     } else if(tmpzr<80){
     el.width = 600;
@@ -83,7 +66,7 @@ try{
 
 function handleStart(evt) {
   if(isNaN(colr)||isNaN(colg)||isNaN(colb)||colr<0||colr>255||colg<0||colg>255||colb<0||colb>255){
-  log("请输入0-255的颜色!")
+  log("请输入0-255的数字!")
   colorerr=1
   return false
   }
