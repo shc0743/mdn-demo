@@ -185,11 +185,11 @@ log("撤销失败")
 }
 el.width=circlecanvasize
 el.height=circlecanvasize
-//document.querySelectorAll("select[onchange='setCanvaSize()']")[0].querySelectorAll("option[value="+circlecanvasize+"]").selected=true
+document.querySelectorAll("select[onchange='setCanvaSize()']")[0].querySelectorAll("option[value="+circlecanvasize+"]").selected=true
 delete circlecanvasize
 log("您可以撤销3分钟内的操作。")
 log("您已成功撤销操作")
-document.body.innerHTML=document.body.innerHTML.replace("<a href='javascript:cancelSetCanvaSize()'>撤销</a>","")
+//document.body.innerHTML=document.body.innerHTML.replace("<a href='javascript:cancelSetCanvaSize()'>撤销</a>","")
 }
 
 function ongoingTouchIndexById(idToFind) {
