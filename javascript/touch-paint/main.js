@@ -38,6 +38,7 @@ try{
     setTimeout(zr,250)
     } else if(tmpzr<80){
     el.width = 600;
+    colorerr=0
     setTimeout(zr,350)
     } else if(tmpzr<100){
     el.height = 600;
@@ -62,6 +63,7 @@ try{
 function handleStart(evt) {
   if(isNaN(colr)||isNaN(colg)||isNaN(colb)||colr<0||colr>255||colg<0||colg>255||colb<0||colb>255){
   log("请输入0-255的颜色!")
+  colorerr=1
   return false
   }
   evt.preventDefault();
@@ -104,6 +106,9 @@ function handleMove(evt) {
       log(".");
     } else {
       log("无法确定下一个触摸点。");
+      if(colorerr){
+        log("请输入0-255的颜色!")
+      }
     }
   }
 }
