@@ -5,14 +5,14 @@ const ctx = el.getContext("2d")
 var colr=Number(colR[0].value)
 var colg=Number(colR[1].value)
 var colb=Number(colR[2].value)
-colb.onblur=function(){
+colR[2].onblur=function(){
 if(this.value=="") this.value=0
 }
-colg.onblur=colb.onblur
-colr.onblur=colg.onblur
-colb.value=0
-colg.value=colb.value
-colr.value=colg.value
+colR[1].onblur=colR[2].onblur
+colR[0].onblur=colR[1].onblur
+colR[2].value=0
+colR[1].value=colR[2].value
+colR[0].value=colR[1].value
 
 startup();
 
