@@ -25,21 +25,24 @@ startup();
 
 function startup() {
 try{
+  document.getElementById("log").style=""
   var tmpzr=0
   var zr=function(){
     tmpzr++;
     log("正在载入..."+tmpzr+"%")
     if(tmpzr<20&&tmpzr>-1){
+    document.getElementById("log").style.border="1px solid"
     setTimeout(zr,750)
-    } else if(tmpzr<50&&tmpzr>19){
-    srtTimeout(zr,350)
-    } else if(tmpzr<80&&tmpzr>49){
+    } else if(tmpzr<50){
+    document.getElementById("log").style.border="1px solid #cccccc"
+    setTimeout(zr,350)
+    } else if(tmpzr<80){
+    el.width = 600;
     setTimeout(zr,500)
-    } else if(tmpzr>79&&tmpzr<100){
+    } else if(tmpzr<100){
+    el.height = 600;
     setTimeout(zr,300)
     } else if(tmpzr>99){
-  el.width = 600;
-  el.height = 600;
   el.addEventListener("touchstart", handleStart, false);
   el.addEventListener("touchend", handleEnd, false);
   el.addEventListener("touchcancel", handleCancel, false);
