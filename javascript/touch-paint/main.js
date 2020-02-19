@@ -156,7 +156,7 @@ function handleEnd(evt) {
       }
       log("<button onclick='if(confirm(\"Are you sure?\")) location.reload(1)'><span style='color:red'>刷新</span></button>")
       log("画板太乱?<a href='javascript:el.width=50;el.width=canvasize.value;log(\"操作成功!\");statpassreset=1'>重置</a>")
-      if(statpassreset){log("由于您进行了重置操作,导致系统稳定性下降,需要<a href="javascript:location.reload(1)">重新启动</a>",1)}
+      if(statpassreset){log("由于您进行了重置操作,导致系统稳定性下降,需要<a href='javascript:location.reload(1)'>重新启动</a>",1)}
       log("触摸结束。");
       ongoingTouches.splice(idx, 1);  // 用完后移除
     } else {
