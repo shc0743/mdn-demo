@@ -21,8 +21,6 @@ var colr=Number(colR[0].value)
 var colg=Number(colR[1].value)
 var colb=Number(colR[2].value)
 
-alert(colr+' '+colg+' '+colb)
-
 startup();
 
 function startup() {
