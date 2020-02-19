@@ -237,11 +237,11 @@ function log(msg,long) {
   if(a<100){a="0"+a};
   if(long){
   p.innerHTML =
-    Math.ceil(new Date().getFullYear()/100)+" Century "+new Date().getFullYear()+" Year "+(new Date().getMonth()+1)+" Month "+new Date().getDate()+" Day "+ 
+    "<div style='border:1px solid #eeeeee'>"+Math.ceil(new Date().getFullYear()/100)+" Century "+new Date().getFullYear()+" Year "+(new Date().getMonth()+1)+" Month "+new Date().getDate()+" Day "+ 
     new Date().toString().substring(16, 24)+"."+ a + '\n' + msg + "\n" + p.innerHTML;
     return true;
   }
   p.innerHTML =
-    Math.ceil(new Date().getFullYear()/100)+" Century "+new Date().getFullYear()+" Year "+(new Date().getMonth()+1)+" Month "+new Date().getDate()+" Day "+ 
-    new Date().toString().substring(16, 24)+"."+ a + '\n' + msg + "\n" + p.innerHTML;
+    "<div style='border:1px solid #eeeeee'>"+Math.ceil(new Date().getFullYear()/100)+" Century "+new Date().getFullYear()+" Year "+(new Date().getMonth()+1)+" Month "+new Date().getDate()+" Day "+ 
+    new Date().toString().substring(16, 24)+"."+ a + '\n' + msg + "</div>\n" + p.innerHTML;
 }
