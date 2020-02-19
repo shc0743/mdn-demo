@@ -172,9 +172,19 @@ function copyTouch(touch) {
 }
 
 function setCanvaSize(size){
+circlecanvasize=el.width
 el.width=size
 el.height=size
-log("您已把触控板大小更新到"+size+"×"+size)
+log("您已成功把触控板大小更新到"+size+"×"+size+" <a href='javascript:cancelSetCanvaSize()'>撤销</a>")
+setTimeout("delete circlecanvasize",180000)
+}
+function cancelSetCanvaSize(){
+if(typeof circlecanvasize==undefined){log("撤销失败")}
+el.width=circlecanvasize
+el.height=circlecanvasize
+delete circlecanvasize
+log("您可以撤销3分钟内的操作。")
+log("您已成功撤销操作")
 }
 
 function ongoingTouchIndexById(idToFind) {
