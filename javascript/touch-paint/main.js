@@ -129,7 +129,6 @@ function handleMove(evt) {
 function handleEnd(evt) {
   evt.preventDefault();
   log("触摸即将结束...");
-  log("<button onclick='location.reload(1)'>重置</button>")
   const touches = evt.changedTouches;
   for (let i = 0; i < touches.length; i++) {
     const color = colorForTouch(touches[i]);
