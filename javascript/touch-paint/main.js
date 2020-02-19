@@ -40,11 +40,11 @@ try{
     if(tmpzr<20&&tmpzr>-1){
     document.getElementById("log").style.border="1px solid"
     setconsole.style.border="1px solid"
-    setTimeout(zr,250)
+    setTimeout(zr,105)
     } else if(tmpzr<50){
     document.getElementById("log").style.border="1px solid #cccccc"
     setconsole.style.border="1px solid #cccccc"
-    setTimeout(zr,100)
+    setTimeout(zr,90)
     } else if(tmpzr<80){
     setconsole.innerHTML="<button onclick='document.getElementById(\"log\").hidden=1;this.hidden=1;echoconsole.hidden=0' id=hiddenconsole>隐藏控制台</button><button onclick='document.getElementById(\"log\").hidden=0;this.hidden=1;hiddenconsole.hidden=0' hidden id=echoconsole>显示控制台</button>"
     el.width = 600;
@@ -239,9 +239,9 @@ function log(msg,long) {
   p.innerHTML =
     Math.ceil(new Date().getFullYear()/100)+" Century "+new Date().getFullYear()+" Year "+(new Date().getMonth()+1)+" Month "+new Date().getDate()+" Day "+ 
     new Date().toString().substring(16, 24)+"."+ a + '\n' + msg + "\n" + p.innerHTML;
-    return false;
+    return true;
   }
   p.innerHTML =
     Math.ceil(new Date().getFullYear()/100)+" Century "+new Date().getFullYear()+" Year "+(new Date().getMonth()+1)+" Month "+new Date().getDate()+" Day "+ 
-    new Date().toString().substring(16, 24)+"."+ a + ' ' + msg + "\n" + p.innerHTML;
+    new Date().toString().substring(16, 24)+"."+ a + '\n' + msg + "\n" + p.innerHTML;
 }
