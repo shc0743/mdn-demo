@@ -185,7 +185,7 @@ function colorForTouch(touch) {
   const b = (Math.floor(touch.identifier / 7) % 16).toString(16);
   const color = "#" + r + g + b;
   //log("identifier " + touch.identifier + " 的颜色为: " + /*color*/"("+colr+","+colg+","+colb+")");
-  log("identifier " + touch.identifier + " 的颜色为: ("+colr+","+colg+","+colb+")")
+  log("identifier " + touch.identifier + " 的颜色为: ("+colr+","+colg+","+colb+")",1)
   var outcolor="rgb("+colr+','+colg+','+colb+")"
   return outcolor;
 }
@@ -202,7 +202,7 @@ function setCanvaSize(size){
 circlecanvasize=el.width
 el.width=size
 el.height=size
-log("您已成功把触控板大小更新到"+size+"×"+size+" <a hidden href='javascript:cancelSetCanvaSize()'>撤销</a>")
+log("您已成功把触控板大小调整到"+size+"×"+size+" <a hidden href='javascript:cancelSetCanvaSize()'>撤销</a>")
 setTimeout("delete circlecanvasize",180000)
 }
 function cancelSetCanvaSize(){
