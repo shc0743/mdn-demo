@@ -5,7 +5,12 @@ const ctx = el.getContext("2d")
 var colr=Number(colR[0].value)
 var colg=Number(colR[1].value)
 var colb=Number(colR[2].value)
-alert(colr+' '+colg+' '+colb)
+colb.onblur=function(){
+if(this.value=="") this.value=0
+}
+colr.onblur=colg.onblur=colb.onblur
+colb.value=0
+colr.value=colg.value=colb.value
 
 startup();
 
@@ -20,7 +25,7 @@ function startup() {
 }
 
 function handleStart(evt) {
-  if(isNaN(colr)||isNaN(colg)||isNaN(colb)||colr<0||colr>255||colg<0||colg>255||colb<0||colb>255||colr==""||colg==""||colb==""){
+  if(isNaN(colr)||isNaN(colg)||isNaN(colb)||colr<0||colr>255||colg<0||colg>255||colb<0||colb>255){
   log("请输入0-255的颜色!")
   return false
   }
