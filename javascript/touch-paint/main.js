@@ -5,14 +5,17 @@ const ctx = el.getContext("2d")
 colR[0].onblur=function(){
 if(this.value=="") this.value=0;
 colr=Number(this.value)
+log("您已把颜色设置为:("+colr+","+colg+","+colb+")")
 }
 colR[1].onblur=function(){
 if(this.value=="") this.value=0;
 colg=Number(this.value)
+log("您已把颜色设置为:("+colr+","+colg+","+colb+")")
 }
 colR[2].onblur=function(){
 if(this.value=="") this.value=0;
 colb=Number(this.value)
+log("您已把颜色设置为:("+colr+","+colg+","+colb+")")
 }
 colR[2].value=0
 colR[1].value=0
@@ -160,6 +163,7 @@ function colorForTouch(touch) {
   const b = (Math.floor(touch.identifier / 7) % 16).toString(16);
   const color = "#" + r + g + b;
   log("identifier " + touch.identifier + " 的颜色为：" + color);
+log("实际颜色:("+colr+","+colg+","+colb+")")
   var outcolor="rgb("+colr+','+colg+','+colb+")"
   return outcolor;
 }
