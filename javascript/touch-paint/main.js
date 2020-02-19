@@ -171,6 +171,7 @@ function copyTouch(touch) {
 function setCanvaSize(size){
 el.width=size
 el.height=size
+log("您已把触控板大小更新到"+size+"×"+size)
 }
 
 function ongoingTouchIndexById(idToFind) {
