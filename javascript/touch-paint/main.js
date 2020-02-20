@@ -155,7 +155,7 @@ function handleEnd(evt) {
       log("想念了起终点标记?<a href='javascript:statorendmarker=1;log(\"打开成功!\")'>打开它</a>")
       }
       log("<button onclick='if(confirm(\"Are you sure?\")) location.reload(1)'><span style='color:red'>刷新</span></button>")
-      log("画板太乱?<a href='javascript:el.width=50;el.width=canvasize.value;log(\"操作成功!\");statpassreset=1'>重置</a>")
+      log("画板太乱?<a href='javascript:el.width=50;setCanvaSize(elew,eleh);log(\"操作成功!\");statpassreset=1'>重置</a>")
       if(1){log("对稳定性不满意?<a href='javascript:if(confirm(\"Are you sure?\")) location.reload(1)' style='color:red'>刷新</a>或<a href='javascript:open(\"https://github.com/shc7432/mdn-demo-chn/issues/new/\",\"_blank\")'>新开issue</a>")}
       log("触摸结束。");
       ongoingTouches.splice(idx, 1);  // 用完后移除
@@ -206,12 +206,15 @@ log("您输入的不是数字,请输入数字!");
 return;
 }
 el.width=size
+elew=size
 if(size2===undefined){
 el.height=size;
 log("您已成功把触控板大小调整到"+size+"×"+size+" <a href='javascript:setCanvaSizeByOther()'>其他...</a>")
+eleh=size
 } else {
 el.height=size2;
 log("您已成功把触控板大小调整到"+size+"×"+size2+" <a href='javascript:setCanvaSizeByOther()'>其他...</a>")
+eleh=size2
  }
 }
 function setCanvaSizeByOther(){
@@ -221,7 +224,7 @@ log(str1+str0+"<button onclick='setCanvaSizeToOk()'>确定</button>")
 }
 function setCanvaSizeToOk(){
 var str=document.querySelectorAll("input[useto='setCanvaSizeByOther']")
-var str0=str[0],str1=str[1]
+var str0=str[0].value,str1=str[1].value
 setCanvaSize(str0,str1)
 }
 
