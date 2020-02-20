@@ -160,7 +160,7 @@ function handleEnd(evt) {
       log("触摸结束。");
       ongoingTouches.splice(idx, 1);  // 用完后移除
     } else {
-      log("错误:无法确定触摸点。");
+      log("无法确定要结束哪个触摸点。");
       log("触摸失败。");
     }
   }
@@ -198,25 +198,15 @@ function copyTouch(touch) {
   };
 }
 
-function setCanvaSize(size){
-circlecanvasize=el.width
+function setCanvaSize(size,size2){
 el.width=size
-el.height=size
-log("您已成功把触控板大小调整到"+size+"×"+size+" <a hidden href='javascript:cancelSetCanvaSize()'>撤销</a>")
-setTimeout("delete circlecanvasize",180000)
+if((size2!==undefined)&&isNaN(Number(size))){log("您输入的不是数字,请输入数字!")}
+if(size2===undefined){el.height=size} else {el.height=size2}
+log("您已成功把触控板大小调整到"+size+"×"+size+" <a href='javascript:setCanvaSizeByOther()'>其他...</a>")
 }
-function cancelSetCanvaSize(){
-if(typeof (circlecanvasize)==undefined){
-log("撤销失败")
-}
-el.width=circlecanvasize
-el.height=circlecanvasize
-log("您可以撤销3分钟内的操作。")
-log("您已成功撤销操作")
-document.querySelectorAll("select[onchange='setCanvaSize()']")[0].querySelectorAll("option[value="+circlecanvasize+"]").selected=true
-//delete circlecanvasize
-circlecanvasize=undefined
-//document.body.innerHTML=document.body.innerHTML.replace("<a href='javascript:cancelSetCanvaSize()'>撤销</a>","")
+function setCanvaSizeByOther(){
+var str0=""
+log()
 }
 
 function ongoingTouchIndexById(idToFind) {
