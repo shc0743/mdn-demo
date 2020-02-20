@@ -199,9 +199,19 @@ function copyTouch(touch) {
 }
 
 function setCanvaSize(size,size2){
+if(size=="other"){setCanvaSizeByOther();return}
+if((size2!==undefined)&&(isNaN(Number(String(size)))||isNaN(Number(String(size2))))){
+log("您输入的不是数字,请输入数字!");
+return;
+}
 el.width=size
-if((size2!==undefined)&&isNaN(Number(size))){log("您输入的不是数字,请输入数字!");return;}
-if(size2===undefined){el.height=size;log("您已成功把触控板大小调整到"+size+"×"+size+" <a href='javascript:setCanvaSizeByOther()'>其他...</a>")} else {el.height=size2;log("您已成功把触控板大小调整到"+size+"×"+size2+" <a href='javascript:setCanvaSizeByOther()'>其他...</a>")}
+if(size2===undefined){
+el.height=size;
+log("您已成功把触控板大小调整到"+size+"×"+size+" <a href='javascript:setCanvaSizeByOther()'>其他...</a>")
+} else {
+el.height=size2;
+log("您已成功把触控板大小调整到"+size+"×"+size2+" <a href='javascript:setCanvaSizeByOther()'>其他...</a>")
+ }
 }
 function setCanvaSizeByOther(){
 var str0="输入高度:<input useto=setCanvaSizeByOther size=6 placeholder=px>"
