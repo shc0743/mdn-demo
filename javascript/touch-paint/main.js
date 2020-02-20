@@ -200,7 +200,7 @@ function copyTouch(touch) {
 
 function setCanvaSize(size,size2){
 if(size=="other"){setCanvaSizeByOther();return}
-alert(size+" "+size2)
+//alert(size+" "+size2)
 if((size2!==undefined)&&(isNaN(Number(String(size)))||isNaN(Number(String(size2))))){
 log("您输入的不是数字,请输入数字!");
 return;
