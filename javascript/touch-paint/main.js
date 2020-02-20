@@ -156,7 +156,7 @@ function handleEnd(evt) {
       }
       log("<button onclick='if(confirm(\"Are you sure?\")) location.reload(1)'><span style='color:red'>刷新</span></button>")
       log("画板太乱?<a href='javascript:el.width=50;el.width=canvasize.value;log(\"操作成功!\");statpassreset=1'>重置</a>")
-      if(1){log("对稳定性不满意?<a href='javascript:if(confirm(\"Are you sure?\")) location.reload(1)' style='color:red'>刷新</a>或<a href='javascript:open(\"https://github.com/shc7432/mdn-demo-chn/issues/new/\",\"_self\")'>新开issue</a>")}
+      if(1){log("对稳定性不满意?<a href='javascript:if(confirm(\"Are you sure?\")) location.reload(1)' style='color:red'>刷新</a>或<a href='javascript:open(\"https://github.com/shc7432/mdn-demo-chn/issues/new/\",\"_blank\")'>新开issue</a>")}
       log("触摸结束。");
       ongoingTouches.splice(idx, 1);  // 用完后移除
     } else {
