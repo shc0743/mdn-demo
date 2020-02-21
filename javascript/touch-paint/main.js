@@ -24,7 +24,7 @@ var colr=Number(colR[0].value)
 var colg=Number(colR[1].value)
 var colb=Number(colR[2].value)
 
-startup();
+//startup();
 
 function startup() {
 try{
@@ -255,3 +255,41 @@ function log(msg,long) {
     new Date().toString().substring(16, 24)+"."+ a + ' ' + msg + "\n" + p.innerHTML;
 }
 
+(function(){try{
+pw=undefined
+var path=location.href
+if(path.search("\\?")!==-1){
+var inputContent=path.split("?")[1]
+if(inputContent.search("\\&")!==-1) { 
+inputContent=inputContent.split("&") 
+var i=0
+for(;i<inputContent.length;i++){
+if(inputContent[i].search(/pw\u003d/)!==-1){
+pw=inputContent[i].replace("pw=","");
+break;
+ }
+}
+} else {
+if(inputContent.search(/pw\u003d/)!==-1){
+pw=inputContent.replace(/pw\u003d/,"")
+ }
+}
+  }
+
+if(pw){
+
+log("请输入密码<input onblur='checkpw(this.value)'>")
+
+ } else {
+
+startup();
+
+ }
+}catch(err){alert(err)}})()
+
+function checkpw(v){
+if(pw==v){
+log("密码正确!")
+startup();
+ } else log("密码错误!")
+}
