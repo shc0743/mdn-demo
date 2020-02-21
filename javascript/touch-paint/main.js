@@ -260,6 +260,16 @@ var path=location.href
 if(path.search("?")!==-1){
 var inputContent=path.split("?")[1]
 if(inputContent.search("&")!==-1) inputContent=inputContent.split("&")
+if(inputContent.search("&")==-1){
+if(/pw=/.test(inputContent[i])){
+pw=inputContent[i].replace("pw=","");
+return;
+ } else {
+pw=undefined;
+startup();
+return;
+ }
+}
 var i=0
 for(;i<inputContent.length;i++){
 if(/pw=/.test(inputContent[i])){
@@ -281,7 +291,7 @@ startup();
 })()
 
 function checkpw(){
-if(inpw==pw){
+if(inpw.value==pw){
 log("密码正确!")
 startup();
  } else {
