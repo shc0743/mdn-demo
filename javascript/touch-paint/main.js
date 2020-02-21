@@ -28,6 +28,7 @@ var colb=Number(colR[2].value)
 
 function startup() {
 try{
+  document.getElementById('log').innerHTML=''
   document.getElementById("log").style.border="0 solid"
   var tmpzr=0
   var zr=function(){
@@ -57,6 +58,7 @@ try{
     setconsole.innerHTML+="<button onclick=\"writeconsole.hidden=0\">写控制台</button><span id=writeconsole hidden><textarea id=writevalueconsole cols=50 rows=1></textarea><button onclick=\"try{log(eval(writevalueconsole.value),1);}catch(err){log(writevalueconsole.value,1);};writevalueconsole.value='';writeconsole.hidden=1\">确定</button></span><button onclick='print()'>打印</button>"
     setconsole.innerHTML+="<button onclick='location.href=(\"toOther.html\")'>分享</button>"
     document.getElementById("canvasize").disabled=0
+    setCanvaSize(600)
     statorendmarker=1
     statpassreset=0
     setTimeout(zr,700)
