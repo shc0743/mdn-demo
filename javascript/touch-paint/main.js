@@ -281,6 +281,8 @@ if(pw){
 
 log("请输入密码<input onblur='checkpw(this.value,this)'>")
 
+pw=decodeURI(pw)
+
  } else {
 
 startup();
