@@ -271,7 +271,7 @@ if(i==inputContent.length-1) pw=undefined;
 
 if(pw){
 
-log("请输入密码<input id=inpw><input type=button onclick='checkpw()'>")
+log("请输入密码<input id=inpw><input type=button onclick='checkpw()' value=确定>")
 
  } else {
 
