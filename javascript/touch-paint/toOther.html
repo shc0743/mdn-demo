@@ -7,7 +7,7 @@
 
 <script>
 function setPw(b){
-if(!b){
+if(b){
 setpwp.hidden=0
  } else {
 setpwp.hidden=1
@@ -15,9 +15,9 @@ setpwp.hidden=1
 }
 function toOther(){
 if(needpw.checked){
-document.body.innerHTML+="操作成功!链接:"+"https://shc7432.github.io/mdn-demo-chn/javascript/touch-paint/"+"?pw="+setpw.value
+document.body.innerHTML+="操作成功!链接:<br>"+"https://shc7432.github.io/mdn-demo-chn/javascript/touch-paint/"+"?pw="+setpw.value+"<br>"
  } else {
-document.body.innerHTML+="操作成功!链接:"+"https://shc7432.github.io/mdn-demo-chn/javascript/touch-paint/"
+document.body.innerHTML+="操作成功!链接:"+"https://shc7432.github.io/mdn-demo-chn/javascript/touch-paint/"+"<br>"
  }
 }
 </script>
