@@ -24,6 +24,8 @@ var colr=Number(colR[0].value)
 var colg=Number(colR[1].value)
 var colb=Number(colR[2].value)
 
+startup;
+
 function startup() {
 try{
   document.getElementById("log").style.border="0 solid"
@@ -255,6 +257,8 @@ function log(msg,long) {
 
 
 
+/*
+
 (function(){
 var path=location.href
 if(path.search("?")!==-1){
@@ -298,3 +302,4 @@ startup();
 log("密码错误!")
  }
 }
+*/
