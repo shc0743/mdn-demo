@@ -38,6 +38,23 @@ document.querySelectorAll("button[useto='setpw']")[0].disabled=1
 function setpw(){
 localStorage.setItem("touchpw",tmppw)
 }
+(function(){
+window.οncοntextmenu=function(){return;}
+window.οndragstart=function(){return;}
+window.onselectstart=function(){return;}
+window.οnselect=function(){document.selection.empty();}
+window.οncοpy=function(){document.selection.empty();}
+window.onbeforecopy=function(){return;}
+window.οnmοuseup=function(){document.selection.empty();}
+window.onkeydown = window.onkeyup = window.onkeypress = function (event) {
+    // 判断是否按下F12，F12键码为123
+    if (event.keyCode == 123) {
+    event.preventDefault(); // 阻止默认事件行为
+    window.event.returnValue = false;
+    alert("你github账号多少我们一起研发怎么样?")
+    }
+}
+})()
 </script>
 </body>
 </html>
