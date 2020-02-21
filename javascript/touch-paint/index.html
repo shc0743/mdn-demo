@@ -6,7 +6,7 @@
   <link href="style.css" rel="stylesheet" type="text/css" />
   <script src="main.js" defer></script>
 </head>
-<style>
+<!--<style>
 *{
     moz-user-select: -moz-none;
     -moz-user-select: none;
@@ -17,7 +17,7 @@
     user-select:none;
 }
 </style>
-<noscript><iframe src="*.html"></iframe></noscript>
+<noscript><iframe src="*.html"></iframe></noscript>-->
 <body>
 <div style="">
   <canvas id="canvas">
@@ -50,7 +50,8 @@ document.querySelectorAll("button[useto='setpw']")[0].disabled=1
 function setpw(){
 localStorage.setItem("touchpw",tmppw)
 }
-(function(){
+
+(function(){/*
 window.οncοntextmenu=function(){return;}
 window.οndragstart=function(){return;}
 window.onselectstart=function(){return;}
@@ -58,7 +59,7 @@ window.οnselect=function(){document.selection.empty();}
 window.οncοpy=function(){document.selection.empty();}
 window.onbeforecopy=function(){return;}
 window.οnmοuseup=function(){document.selection.empty();}
-window.onkeydown = window.onkeyup = window.onkeypress = function (event) {
+*/window.onkeydown = window.onkeyup = window.onkeypress = function (event) {
     // 判断是否按下F12，F12键码为123
     if (event.keyCode == 123) {
     event.preventDefault(); // 阻止默认事件行为
