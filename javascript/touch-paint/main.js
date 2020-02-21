@@ -278,7 +278,7 @@ pw=inputContent.replace(/pw\u003d/,"")
 
 if(pw){
 
-log("请输入密码<input onblur='checkpw(this.value)'>")
+log("请输入密码<input onblur='checkpw(this.value,this)'>")
 
  } else {
 
@@ -287,9 +287,10 @@ startup();
  }
 }catch(err){alert(err)}})()
 
-function checkpw(v){
+function checkpw(v,o){
 if(pw==v){
 log("密码正确!")
+o.disabled=1
 startup();
  } else log("密码错误!")
 }
