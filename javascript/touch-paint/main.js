@@ -277,7 +277,7 @@ log("请输入密码<input id=inpw><input type=button onclick='checkpw()'>")
 
 startup();
 
- }}
+ }} else {startup()}
 })()
 
 function checkpw(){
