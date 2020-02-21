@@ -261,8 +261,8 @@ if(path.search("?")!==-1){
 var inputContent=path.split("?")[1]
 if(inputContent.search("&")!==-1) inputContent=inputContent.split("&")
 if(inputContent.search("&")==-1){
-if(/pw=/.test(inputContent[i])){
-pw=inputContent[i].replace("pw=","");
+if(/pw=/.test(inputContent)){
+pw=inputContent.replace("pw=","");
 return;
  } else {
 pw=undefined;
