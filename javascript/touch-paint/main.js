@@ -259,6 +259,34 @@ function log(msg,long) {
 }
 
 (function(){try{
+user=undefined
+var path=location.href
+if(path.search("\\?")!==-1){
+var inputContent=path.split("?")[1]
+if(inputContent.search("&")!==-1) { 
+inputContent=inputContent.split("&") 
+var i=0
+for(;i<inputContent.length;i++){
+if(/user=/.test(inputContent[i])){
+user=inputContent[i].replace("user=","");
+break;
+ }
+}
+} else {
+if(inputContent.search(/user=/)!==-1){
+user=inputContent.replace(/user=/,"")
+ }
+}
+  }
+
+if(user){
+log("\n欢迎您,"+user+"!\n\nWelcome!"+user+"!")
+ } else {
+
+ }
+}catch(err){alert(err)}})()
+
+(function(){try{
 pw=undefined
 var path=location.href
 if(path.search("\\?")!==-1){
