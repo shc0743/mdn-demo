@@ -280,7 +280,7 @@ user=inputContent.replace(/user=/,"")
   }
 
 if(user){
-log("\n欢迎您,"+user+"!\n\nWelcome!"+user+"!")
+log("\n欢迎您,"+decodeURI(user)+"!\n\nWelcome!"+decodeURI(user)+"!")
  } else {
 
  }
