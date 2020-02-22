@@ -28,7 +28,6 @@ var colb=Number(colR[2].value)
 
 function startup() {
 try{
-  document.getElementById('log').innerHTML=''
   document.getElementById("log").style.border="0 solid"
   var tmpzr=0
   var zr=function(){
@@ -325,7 +324,7 @@ passwordVerify()
 function checkpw(v,o){
 if(pw==v){
 log("密码正确!")
-o.disabled=1
+document.getElementById('log').innerHTML=''
 startup();
  } else log("密码错误!")
 }
