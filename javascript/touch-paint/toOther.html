@@ -27,21 +27,23 @@ function copyLink(){
 
 }
 
-(function(){var clipboard = new ClipboardJS('#rcopy', {
-			text : function() {
-				return link;
-			}
-		});
-		clipboard.on("success", function(e) {
-			//console.log(e);
-			document.body.innerHTML+=('复制成功');
-			clipboard.destroy();
-		});
- 
-		clipboard.on("error", function(e) {
-			console.log(e);
-			document.body.innerHTML+=('复制失败');
-			clipboard.destroy();
-		});
+(function(){
+var copyTopic=function(topic){
+      if(window.clipboardData){
+          window.clipboardData.setData('text',topic);
+      }else{
+          (function(s){
+              document.oncopy=function(e){
+                  e.clipboardData.setData('text',s);
+                  e.preventDefault();
+                  document.oncopy=null;
+              }
+          })(topic);
+          document.execCommand('Copy');
+          this.$Message.info('复制成功')
+      }
+ }
+
+copyTopic(link)
 })()
 </script>
