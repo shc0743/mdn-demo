@@ -280,7 +280,6 @@ user=inputContent.replace(/user=/,"")
 
 if(user){
 log("\n欢迎您,"+decodeURI(user)+"!\n\nWelcome!"+decodeURI(user)+"!")
-passwordVerify()
  } else {
 
  }
