@@ -287,7 +287,7 @@ passwordVerify()
  }
 }catch(err){alert(err)}})()
 
-(function passwordVerify(){try{
+function passwordVerify(){try{
 pw=undefined
 var path=location.href
 if(path.search("\\?")!==-1){
@@ -319,7 +319,8 @@ pw=decodeURI(pw)
 startup();
 
  }
-}catch(err){alert(err)}})()
+}catch(err){alert(err)}}
+passwordVerify()
 
 function checkpw(v,o){
 if(pw==v){
