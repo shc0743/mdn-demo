@@ -1,7 +1,8 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
 <h1>越分享,越快乐!</h1>
 <pre><div style="border:1px solid #cccccc">分享选项
-<input type=checkbox id=needpw onclick="setPw(this.checked)">需要密码<div hidden id=setpwp>密码:<input id=setpw></div></div>
+<input type=checkbox id=needpw onclick="setUser(this.checked)">需要密码<div hidden id=setpwp>密码:<input id=setpw></div></div>
+<input type=checkbox id=onnuser onclick="setPw(this.checked)">启用用户名<div hidden id=setuserp>设置用户名:<input id=setuser></div></div>
 <button onclick="toOther()">分享</button>
 </pre>
 
@@ -14,14 +15,29 @@ setpwp.hidden=0
 setpwp.hidden=1
  }
 }
+function setUser(b){
+if(b){
+setuserp.hidden=0
+ } else {
+setuserp.hidden=1
+ }
+}
 function toOther(){
 if(needpw.checked){
-document.body.innerHTML+="操作成功!链接:<br>"+"https://shc7432.github.io/mdn-demo-chn/javascript/touch-paint/"+"?pw="+setpw.value+" <!--<a href='javascript:copyLink()'>复制</a><br>-->"
+if(onnuser.checked){
+document.body.innerHTML+="操作成功!链接:<br>"+"https://shc7432.github.io/mdn-demo-chn/javascript/touch-paint/"+"?pw="+setpw.value+" <!--<a href='javascript:copyLink()'>复制</a><br>--><br>"
+link="https://shc7432.github.io/mdn-demo-chn/javascript/touch-paint/"+"?pw="+setpw.value+"&user="+setuser.value
+} else {
+document.body.innerHTML+="操作成功!链接:<br>"+"https://shc7432.github.io/mdn-demo-chn/javascript/touch-paint/"+"?pw="+setpw.value+" <!--<a href='javascript:copyLink()'>复制</a><br>--><br>"
 link="https://shc7432.github.io/mdn-demo-chn/javascript/touch-paint/"+"?pw="+setpw.value
- } else {
-document.body.innerHTML+="操作成功!链接:<br>"+"https://shc7432.github.io/mdn-demo-chn/javascript/touch-paint/"+" <!--<a href='javascript:copyLink()'>复制</a><br>-->"
+} } else {
+if(onnuser.checked){
+document.body.innerHTML+="操作成功!链接:<br>"+"https://shc7432.github.io/mdn-demo-chn/javascript/touch-paint/"+" <!--<a href='javascript:copyLink()'>复制</a><br>--><br>"
+link="https://shc7432.github.io/mdn-demo-chn/javascript/touch-paint/"+"?user="+setuser.value
+} else {
+document.body.innerHTML+="操作成功!链接:<br>"+"https://shc7432.github.io/mdn-demo-chn/javascript/touch-paint/"+" <!--<a href='javascript:copyLink()'>复制</a><br>--><br>"
 link="https://shc7432.github.io/mdn-demo-chn/javascript/touch-paint/"
- }
+} }
 }
 function copyLink(){
 (function(){
