@@ -281,12 +281,13 @@ user=inputContent.replace(/user=/,"")
 
 if(user){
 log("\n欢迎您,"+decodeURI(user)+"!\n\nWelcome!"+decodeURI(user)+"!")
+passwordVerify()
  } else {
-
+passwordVerify()
  }
 }catch(err){alert(err)}})()
 
-(function(){try{
+(function passwordVerify(){try{
 pw=undefined
 var path=location.href
 if(path.search("\\?")!==-1){
