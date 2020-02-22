@@ -282,7 +282,7 @@ if(user){
 log("\n欢迎您,"+decodeURI(user)+"!\n\nWelcome!"+decodeURI(user)+"!")
 passwordVerify()
  } else {
-passwordVerify()
+
  }
 }catch(err){alert(err)}})()
 
