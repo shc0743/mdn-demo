@@ -55,7 +55,7 @@ try{
     setTimeout(zr,35)
     } else if(tmpzr==99){
     setconsole.innerHTML+="<button onclick=\"document.getElementById('log').innerHTML=''\">清空控制台</button>"
-    setconsole.innerHTML+="<button onclick=\"writeconsole.hidden=0\">写控制台</button><span id=writeconsole hidden><textarea id=writevalueconsole cols=50 rows=1></textarea><button onclick=\"try{log(eval(writevalueconsole.value),1);}catch(err){log(writevalueconsole.value,1);};writevalueconsole.value='';writeconsole.hidden=1\">确定</button></span><button onclick='print()'>打印</button>"
+    setconsole.innerHTML+="<button onclick=\"writeconsole.hidden=0\">写控制台</button><span id=writeconsole hidden><textarea id=writevalueconsole cols=50 rows=1></textarea><button onclick=\"try{log(eval(writevalueconsole.value),0)}catch(err){log(writevalueconsole.value,1);};writevalueconsole.value='';writeconsole.hidden=1\">确定</button></span><button onclick='print()'>打印</button>"
     setconsole.innerHTML+="<button onclick='location.href=(\"toOther.html\")'>分享</button>"
     document.getElementById("canvasize").disabled=0
     setCanvaSize(600)
