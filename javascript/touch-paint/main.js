@@ -39,6 +39,7 @@ try{
     }
     if(tmpzr<20&&tmpzr>-1){
     document.getElementById("log").style.border="1px solid"
+    document.getElementById("log").style.fontSize="10px"
     setconsole.style.border="1px solid"
     setTimeout(zr,105)
     } else if(tmpzr<50){
